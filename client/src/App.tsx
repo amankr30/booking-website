@@ -29,6 +29,7 @@ function App() {
         Click on the Vite and React logos to learn more
         HELLO my name is Aman
         i am a frontend engineer
+        3rd year btech student
       </p>
     </>
   )
