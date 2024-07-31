@@ -2,6 +2,9 @@ import { Input } from "../../components/ui/input";
 
 
 const Navbar = () => {
+  const handleClick = () => { 
+    console.log("clicked"); 
+};
   return (
     <div>
       <nav className="bg-white shadow-md p-4 flex justify-between w-full ">
@@ -25,7 +28,7 @@ const Navbar = () => {
         {/* <!-- Location, Sign In, Menu --> */}
         <div className="flex items-center gap-5 space-x-4">
           <div className="flex items-center gap-2">
-            <span className="">Kolkata</span>
+            <span onClick={handleClick} className="cursor-pointer">Kolkata</span>
             <svg
               width="16"
               height="16"
@@ -42,7 +45,7 @@ const Navbar = () => {
             </svg>
           </div>
           
-          <button className="bg-red-500 text-white px-4 py-2 rounded-lg">
+          <button className="bg-red-500 cursor-pointer text-white px-4 py-2 rounded-lg">
             Sign In
           </button>
           <button className="md:hidden">
