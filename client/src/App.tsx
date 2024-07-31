@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <div>
-        <div><Navbar /></div>
+        <div className='mb-5'><Navbar /></div>
         {/* <div><SearchYourCity /></div>
         <div ><DatePicker /></div> */}
        <Body />

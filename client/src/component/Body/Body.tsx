@@ -1,11 +1,14 @@
+
+import FilterCapsule from "../Events/FilterCapsule";
 import { DatePicker } from "../Filters/DatePicker";
 import Dropdown_test from "../Filters/Dropdown_test";
+import Card from "./Card";
 
 function Body() {
   return (
     <div className="container w-full px-20 flex justify-between ">
-      <div className="filters w-[30%] flex flex-col justify-start">
-        <div className="heading flex">
+      <div className="filters w-[30%] flex flex-col justify-start mr-5">
+        <div className="heading flex font-semibold text-3xl">
           <h1>Filters</h1>
         </div>
         <div className="options flex flex-col gap-y-3">
@@ -20,7 +23,13 @@ function Body() {
           </div>
         </div>
       </div>
-      <div className="events w-full">Events</div>
+      <div className="events w-full flex justify-start flex-wrap gap-5">
+        <div className="heading font-semibold text-3xl">Events in Kolkata</div>
+        <div className="capsule">
+          <FilterCapsule />
+        </div>
+        <div><Card /></div> 
+        </div>
     </div>
   );
 }
