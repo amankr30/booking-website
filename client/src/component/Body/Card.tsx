@@ -9,8 +9,8 @@ const Card = () => {
                 <div>
                 <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
                 </div>                
-                <div className="p-4 flex flex-col items-start">
-                    <p className="text-md font-semibold mb-1">Nothing Makes Sense FT. VARUN GROVER</p>
+                <div className="p-4 flex flex-col text-left">
+                    <p className="text-md font-semibold mb-1 ">Nothing Makes Sense FT. VARUN GROVER</p>
                     <p className="text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
                     <p className="text-sm text-gray-700 mb-1">Stand up Comedy</p>
                     <p className="text-sm font-semibold">₹ 999 onwards</p>
@@ -21,7 +21,7 @@ const Card = () => {
                 <div>
                 <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
                 </div>                
-                <div className="p-4 flex flex-col items-start">
+                <div className="p-4 flex flex-col text-left">
                     <p className="text-md font-semibold mb-1">Nothing Makes Sense FT. VARUN GROVER</p>
                     <p className="text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
                     <p className="text-sm text-gray-700 mb-1">Stand up Comedy</p>
@@ -33,7 +33,7 @@ const Card = () => {
                 <div>
                 <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
                 </div>                
-                <div className="p-4 flex flex-col items-start">
+                <div className="p-4 flex flex-col text-left">
                     <p className="text-md font-semibold mb-1">Nothing Makes Sense FT. VARUN GROVER</p>
                     <p className="text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
                     <p className="text-sm text-gray-700 mb-1">Stand up Comedy</p>
@@ -45,7 +45,51 @@ const Card = () => {
                 <div>
                 <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
                 </div>                
-                <div className="p-4 flex flex-col items-start">
+                <div className="p-4 flex flex-col text-left">
+                    <p className="text-md font-semibold mb-1">Nothing Makes Sense FT. VARUN GROVER</p>
+                    <p className="text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
+                    <p className="text-sm text-gray-700 mb-1">Stand up Comedy</p>
+                    <p className="text-sm font-semibold">₹ 999 onwards</p>
+                </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                <div>
+                <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
+                </div>                
+                <div className="p-4 flex flex-col text-left">
+                    <p className="text-md font-semibold mb-1">Nothing Makes Sense FT. VARUN GROVER</p>
+                    <p className="text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
+                    <p className="text-sm text-gray-700 mb-1">Stand up Comedy</p>
+                    <p className="text-sm font-semibold">₹ 999 onwards</p>
+                </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                <div>
+                <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
+                </div>                
+                <div className="p-4 flex flex-col text-left">
+                    <p className="text-md font-semibold mb-1">Nothing Makes Sense FT. VARUN GROVER</p>
+                    <p className="text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
+                    <p className="text-sm text-gray-700 mb-1">Stand up Comedy</p>
+                    <p className="text-sm font-semibold">₹ 999 onwards</p>
+                </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                <div>
+                <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
+                </div>                
+                <div className="p-4 flex flex-col text-left">
+                    <p className="text-md font-semibold mb-1">Nothing Makes Sense FT. VARUN GROVER</p>
+                    <p className="text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
+                    <p className="text-sm text-gray-700 mb-1">Stand up Comedy</p>
+                    <p className="text-sm font-semibold">₹ 999 onwards</p>
+                </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                <div>
+                <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
+                </div>                
+                <div className="p-4 flex flex-col text-left">
                     <p className="text-md font-semibold mb-1">Nothing Makes Sense FT. VARUN GROVER</p>
                     <p className="text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
                     <p className="text-sm text-gray-700 mb-1">Stand up Comedy</p>
