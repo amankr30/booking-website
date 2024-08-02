@@ -10,7 +10,7 @@ const Navbar = () => {
       <nav className="bg-white shadow-md p-4 flex justify-between w-full ">
         <div className="w-2/3 flex items-center">
           {/* <!-- Logo --> */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center mx-5">
             <span className="font-semibold text-xl">
               book<span className="text-red-500">my</span>show
             </span>
@@ -45,10 +45,10 @@ const Navbar = () => {
             </svg>
           </div>
           
-          <button className="bg-red-500 cursor-pointer text-white px-4 py-2 rounded-lg">
+          <button className="bg-red-500 cursor-pointer text-white px-3 py-1 rounded-lg">
             Sign In
           </button>
-          <button className="md:hidden">
+          {/* <button className="md:hidden">
             <svg
               className="w-6 h-6"
               fill="none"
@@ -63,7 +63,7 @@ const Navbar = () => {
                 d="M4 6h16M4 12h16M4 18h16"
               ></path>
             </svg>
-          </button>
+          </button> */}
         </div>
       </nav>
     </div>

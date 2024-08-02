@@ -40,3 +40,50 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Media query */
+
+
+@media only screen and (min-width: 1042px) and (max-width: 1285px) {
+  .eventName {
+    font-size: 12px;
+    margin-bottom: 0.3px;
+  }
+  .cards {
+    min-height: 92%;
+  }
+  .cards img {
+    width: 100%;
+    height: 60%;
+  }
+  .eventDetails {
+    font-size: 8px;
+  } 
+  .capsuleFilter button {
+    font-size: 12px;
+  }
+  
+}
+
+@media only screen and (max-width: 1042px) {
+  .capsuleFilter button {
+    margin: 0 2px;
+    font-size: 10px;
+  }
+  .cardBody{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px; 
+  }
+  
+}
+
+@media only screen and (max-width: 950px) {
+  .cardBody{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px; 
+  }
+}
+
+
