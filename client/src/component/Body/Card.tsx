@@ -10,7 +10,7 @@ const Card = () => {
                 <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
                 </div>                
                 <div className="showDetails p-4 flex flex-col text-left">
-                    <p className="eventName text-md font-semibold mb-1 ">Nothing Makes Sense FT. VARUN GROVER</p>
+                    <p className="eventName text-sm font-semibold mb-1 ">Nothing Makes Sense FT. VARUN GROVER</p>
                     <p className="eventDetails text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
                     <p className="eventDetails text-sm text-gray-700 mb-1">Stand up Comedy</p>
                     <p className="eventDetails text-sm font-semibold">₹ 999 onwards</p>
@@ -22,7 +22,7 @@ const Card = () => {
                 <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
                 </div>                
                 <div className="showDetails p-4 flex flex-col text-left">
-                    <p className="eventName text-md font-semibold mb-1 ">Nothing Makes Sense FT. VARUN GROVER</p>
+                    <p className="eventName text-sm font-semibold mb-1 ">Nothing Makes Sense FT. VARUN GROVER</p>
                     <p className="eventDetails text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
                     <p className="eventDetails text-sm text-gray-700 mb-1">Stand up Comedy</p>
                     <p className="eventDetails text-sm font-semibold">₹ 999 onwards</p>
@@ -34,7 +34,7 @@ const Card = () => {
                 <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
                 </div>                
                 <div className="showDetails p-4 flex flex-col text-left">
-                    <p className="eventName text-md font-semibold mb-1 ">Nothing Makes Sense FT. VARUN GROVER</p>
+                    <p className="eventName text-sm font-semibold mb-1 ">Nothing Makes Sense FT. VARUN GROVER</p>
                     <p className="eventDetails text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
                     <p className="eventDetails text-sm text-gray-700 mb-1">Stand up Comedy</p>
                     <p className="eventDetails text-sm font-semibold">₹ 999 onwards</p>
@@ -46,7 +46,7 @@ const Card = () => {
                 <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
                 </div>                
                 <div className="showDetails p-4 flex flex-col text-left">
-                    <p className="eventName text-md font-semibold mb-1 ">Nothing Makes Sense FT. VARUN GROVER</p>
+                    <p className="eventName text-sm font-semibold mb-1 ">Nothing Makes Sense FT. VARUN GROVER</p>
                     <p className="eventDetails text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
                     <p className="eventDetails text-sm text-gray-700 mb-1">Stand up Comedy</p>
                     <p className="eventDetails text-sm font-semibold">₹ 999 onwards</p>
@@ -58,7 +58,7 @@ const Card = () => {
                 <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
                 </div>                
                 <div className="showDetails p-4 flex flex-col text-left">
-                    <p className="eventName text-md font-semibold mb-1 ">Nothing Makes Sense FT. VARUN GROVER</p>
+                    <p className="eventName text-sm font-semibold mb-1 ">Nothing Makes Sense FT. VARUN GROVER</p>
                     <p className="eventDetails text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
                     <p className="eventDetails text-sm text-gray-700 mb-1">Stand up Comedy</p>
                     <p className="eventDetails text-sm font-semibold">₹ 999 onwards</p>
