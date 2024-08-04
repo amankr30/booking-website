@@ -1,10 +1,9 @@
 import { Input } from "../../components/ui/input";
 
-
 const Navbar = () => {
-  const handleClick = () => { 
-    console.log("clicked"); 
-};
+  const handleClick = () => {
+    console.log("clicked");
+  };
   return (
     <div>
       <nav className="bg-white shadow-md p-4 flex justify-between w-full ">
@@ -27,8 +26,11 @@ const Navbar = () => {
         </div>
         {/* <!-- Location, Sign In, Menu --> */}
         <div className="flex items-center gap-5 space-x-4">
-          <div className="flex items-center gap-2">
-            <span onClick={handleClick} className="cursor-pointer">Kolkata</span>
+          <div
+            onClick={handleClick}
+            className="flex items-center gap-2 cursor-pointer hover:bg-gray-100 px-2 py-1 rounded-sm"
+          >
+            <span className="">Kolkata</span>
             <svg
               width="16"
               height="16"
@@ -44,8 +46,13 @@ const Navbar = () => {
               ></path>
             </svg>
           </div>
+
+
+          <button className="bg-red-500 cursor-pointer text-white px-4 py-1 rounded-lg">
+
           
           <button className=" signinBtn bg-red-500 cursor-pointer text-white px-3 py-1 rounded-lg">
+
             Sign In
           </button>
         </div>
