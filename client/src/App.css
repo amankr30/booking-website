@@ -45,7 +45,6 @@ body {
   color: #888;
 }
 
-/* Media query */
 
 @media only screen and (min-width: 1042px) and (max-width: 1285px) {
   .eventName {
@@ -77,6 +76,7 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 5px;
   }
+
 }
 
 @media only screen and (max-width: 950px) {
@@ -85,4 +85,23 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 8px;
   }
+
+
+
+  .capsuleFilter button {
+    display: none;
+  }
+  .signinBtn{
+    padding: 1px 1px;
+    font-size: x-small;
+  }
+  .cardBody{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .heading{
+    font-size: 25px;
+  }
+  
 }
+

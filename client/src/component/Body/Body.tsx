@@ -1,6 +1,6 @@
 import FilterCapsule from "../Events/FilterCapsule";
 import Dropdown from "../Filters/Dropdown";
-import Card from "./Card";
+import Card from './Card'
 
 function Body() {
   return (
