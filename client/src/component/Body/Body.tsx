@@ -1,7 +1,6 @@
 
 import FilterCapsule from "../Events/FilterCapsule";
 import { DatePicker } from "../Filters/DatePicker";
-import Dropdown_test from "../Filters/Dropdown_test";
 import Card from "./Card";
 
 function Body() {
@@ -14,12 +13,6 @@ function Body() {
         <div className="options flex flex-col gap-y-3">
           <div className="pick-date w-full">
             <DatePicker />
-          </div>
-          <div className="select-lang w-full">
-          <Dropdown_test />
-          </div>
-          <div className="category">
-          <Dropdown_test />
           </div>
         </div>
       </div>
