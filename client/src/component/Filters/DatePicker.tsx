@@ -39,22 +39,8 @@ export const DatePicker: React.FC = () => {
             setDate(addDays(new Date(), parseInt(value)))
           }
         >
-<<<<<<< HEAD
-          {/* <SelectTrigger>
-            <SelectValue placeholder="Select" />
-          </SelectTrigger>
-          <SelectContent position="popper">
-            <SelectItem value="0">Today</SelectItem>
-            <SelectItem value="1">Tomorrow</SelectItem>
-            <SelectItem value="3">In 3 days</SelectItem>
-            <SelectItem value="7">In a week</SelectItem>
-          </SelectContent> */}
-        </Select>
-        <div className="rounded-md border text-black bg-opacity-0">
-=======
         </Select>
         <div className="rounded-md border text-black">
->>>>>>> e42d9975bcfed5619148b3a55a00e4195d693cc6
           <Calendar mode="single" selected={date} onSelect={setDate} />
         </div>
       </PopoverContent>
