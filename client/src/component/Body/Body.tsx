@@ -1,8 +1,6 @@
-
 import FilterCapsule from "../Events/FilterCapsule";
 import { DatePicker } from "../Filters/DatePicker";
-// import Dropdown_test from "../Filters/Dropdown_test";
-import Card from './Card'
+import Card from "./Card";
 
 function Body() {
   return (
@@ -15,12 +13,6 @@ function Body() {
           <div className="pick-date w-full">
             <DatePicker />
           </div>
-          {/* <div className="select-lang w-full">
-          <Dropdown_test />
-          </div>
-          <div className="category">
-          <Dropdown_test />
-          </div> */}
         </div>
       </div>
       <div className="events w-full flex flex-col text-left justify-start flex-wrap gap-5">

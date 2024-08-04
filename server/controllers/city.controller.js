@@ -9,7 +9,7 @@ const addCity = catchAsync(async (req, res) => {
 	const existingCity = await City.findOne({ name });
 
 	if (existingCity) {
-		return res.json(new ApiError(409, 'City already exists'));
+		throw new ApiError(409, 'City already exists');
 	}
 
 	const newCity = new City({ name });
