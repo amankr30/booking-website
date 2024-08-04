@@ -45,14 +45,8 @@ const Navbar = () => {
                 fill="#1A1A1A"
               ></path>
             </svg>
-          </div>
-
-
-          <button className="bg-red-500 cursor-pointer text-white px-4 py-1 rounded-lg">
-
-          
+          </div>          
           <button className=" signinBtn bg-red-500 cursor-pointer text-white px-3 py-1 rounded-lg">
-
             Sign In
           </button>
         </div>

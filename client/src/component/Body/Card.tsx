@@ -1,161 +1,92 @@
+import { RiArrowDropDownLine } from "react-icons/ri";
+
 const Card = () => {
   return (
-    <div className=" p-4">
-      <div className="max-w-7xl mx-auto">
-        {/* <!-- Event Cards Grid --> */}
-        <div className="cardBody grid lg:grid-cols-4 lg:gap-5 items-center">
-
-          {/* <!-- Card 1 --> */}
-          <div className="cards bg-white rounded-lg shadow-md overflow-hidden h-[100%]">
-            <div className="h-[100]">
-              <img
-                src="src\assets\card1.jpg"
-                alt="Event 1"
-                className=" images w-full h-[100%] object-cover"
-              />
-            </div>
-            <div className="showDetails p-4 flex flex-col text-left">
-              <p className="eventName text-md font-semibold mb-1 ">
-                Nothing Makes Sense FT. VARUN GROVER
-              </p>
-              <p className="eventDetails text-sm text-gray-700 mb-1">
-                Kala Kunj Auditorium:...
-              </p>
-              <p className="eventDetails text-sm text-gray-700 mb-1">
-                Stand up Comedy
-              </p>
-              <p className="eventDetails text-sm font-semibold">
-                ₹ 999 onwards
-              </p>
-            </div>
-          </div>
-          {/* <!-- Card 1 --> */}
-          <div className="cards bg-white rounded-lg shadow-md overflow-hidden">
-            <div>
-              <img
-                src="src\assets\card1.jpg"
-                alt="Event 1"
-                className=" images w-full h-full object-cover"
-              />
-            </div>
-            <div className="showDetails p-4 flex flex-col text-left">
-              <p className="eventName text-md font-semibold mb-1 ">
-                Nothing Makes Sense FT. VARUN GROVER
-              </p>
-              <p className="details text-sm text-gray-700 mb-1">
-                Kala Kunj Auditorium:...
-              </p>
-              <p className="details text-sm text-gray-700 mb-1">
-                Stand up Comedy
-              </p>
-              <p className="details text-sm font-semibold">₹ 999 onwards</p>
-            </div>
-          </div>
-          {/* <!-- Card 1 --> */}
-          <div className="cards bg-white rounded-lg shadow-md overflow-hidden">
-            <div>
-              <img
-                src="src\assets\card1.jpg"
-                alt="Event 1"
-                className=" images w-full h-full object-cover"
-              />
-            </div>
-            <div className="showDetails p-4 flex flex-col text-left">
-              <p className="eventName text-md font-semibold mb-1 ">
-                Nothing Makes Sense FT. VARUN GROVER
-              </p>
-              <p className="details text-sm text-gray-700 mb-1">
-                Kala Kunj Auditorium:...
-              </p>
-              <p className="details text-sm text-gray-700 mb-1">
-                Stand up Comedy
-              </p>
-              <p className="details text-sm font-semibold">₹ 999 onwards</p>
-            </div>
-          </div>
-          {/* <!-- Card 1 --> */}
-          <div className="cards bg-white rounded-lg shadow-md overflow-hidden">
-            <div>
-              <img
-                src="src\assets\card1.jpg"
-                alt="Event 1"
-                className=" images w-full h-full object-cover"
-              />
-            </div>
-            <div className="showDetails p-4 flex flex-col text-left">
-              <p className="eventName text-md font-semibold mb-1 ">
-                Nothing Makes Sense FT. VARUN GROVER
-              </p>
-              <p className="details text-sm text-gray-700 mb-1">
-                Kala Kunj Auditorium:...
-              </p>
-              <p className="details text-sm text-gray-700 mb-1">
-                Stand up Comedy
-              </p>
-              <p className="details text-sm font-semibold">₹ 999 onwards</p>
+    <div className="p-4">
+      <div className="w-full mx-auto">
+        {/* <!-- Date Dropdown --> */}
+        <div className="bg-white shadow-md rounded-md mb-4">
+          <div className="flex justify-between items-center p-4 cursor-pointer w-full">
+            <div className="flex w-2/3 items-center gap-2">
+              <span>
+                <RiArrowDropDownLine />
+              </span>
+              <span>Date</span>
             </div>
 
-            {/* <!-- Card 1 --> */}
-            <div className="cards bg-white rounded-lg shadow-md overflow-hidden h-[100%]">
-                <div className="h-[100]">
-                <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
-                </div>                
-                <div className="showDetails p-4 flex flex-col text-left">
-                    <p className="eventName text-md font-semibold mb-1 ">Nothing Makes Sense FT. VARUN GROVER</p>
-                    <p className="eventDetails text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
-                    <p className="eventDetails text-sm text-gray-700 mb-1">Stand up Comedy</p>
-                    <p className="eventDetails text-sm font-semibold">₹ 999 onwards</p>
-                </div>
+            <span className="text-sm text-blue-500">Clear</span>
+          </div>
+          <div id="dateDropdown" className=" p-4 border-t">
+            <div className="flex flex-wrap gap-2">
+              <button className="bg-gray-200 text-red-500 px-2 py-1 rounded-md">
+                Today
+              </button>
+              <button className="bg-gray-200 text-red-500 px-2 py-1 rounded-md">
+                Tomorrow
+              </button>
+              <button className="bg-gray-200 text-red-500 px-2 py-1 rounded-md">
+                This Weekend
+              </button>
             </div>
-            {/* <!-- Card 1 --> */}
-            <div className="cards bg-white rounded-lg shadow-md overflow-hidden h-[100%]">
-                <div className="h-[100]">
-                <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
-                </div>                
-                <div className="showDetails p-4 flex flex-col text-left">
-                    <p className="eventName text-md font-semibold mb-1 ">Nothing Makes Sense FT. VARUN GROVER</p>
-                    <p className="eventDetails text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
-                    <p className="eventDetails text-sm text-gray-700 mb-1">Stand up Comedy</p>
-                    <p className="eventDetails text-sm font-semibold">₹ 999 onwards</p>
-                </div>
+            <div className="mt-4 flex">
+              <label className="flex items-center">
+                <input
+                  type="checkbox"
+                  className="form-checkbox h-5 w-5 text-gray-600"
+                />
+                <span className="ml-2">Date Range</span>
+              </label>
             </div>
-            {/* <!-- Card 1 --> */}
-            <div className="cards bg-white rounded-lg shadow-md overflow-hidden h-[100%]">
-                <div className="h-[100]">
-                <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
-                </div>                
-                <div className="showDetails p-4 flex flex-col text-left">
-                    <p className="eventName text-md font-semibold mb-1 ">Nothing Makes Sense FT. VARUN GROVER</p>
-                    <p className="eventDetails text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
-                    <p className="eventDetails text-sm text-gray-700 mb-1">Stand up Comedy</p>
-                    <p className="eventDetails text-sm font-semibold">₹ 999 onwards</p>
-                </div>
-            </div>
-            {/* <!-- Card 1 --> */}
-            <div className="cards bg-white rounded-lg shadow-md overflow-hidden h-[100%]">
-                <div className="h-[100]">
-                <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
-                </div>                
-                <div className="showDetails p-4 flex flex-col text-left">
-                    <p className="eventName text-md font-semibold mb-1 ">Nothing Makes Sense FT. VARUN GROVER</p>
-                    <p className="eventDetails text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
-                    <p className="eventDetails text-sm text-gray-700 mb-1">Stand up Comedy</p>
-                    <p className="eventDetails text-sm font-semibold">₹ 999 onwards</p>
-                </div>
-            </div>
-            {/* <!-- Card 1 --> */}
-            <div className="cards bg-white rounded-lg shadow-md overflow-hidden h-[100%]">
-                <div className="h-[100]">
-                <img src="src\assets\card1.jpg" alt="Event 1" className="w-full h-full object-cover" />
-                </div>                
-                <div className="showDetails p-4 flex flex-col text-left">
-                    <p className="eventName text-md font-semibold mb-1 ">Nothing Makes Sense FT. VARUN GROVER</p>
-                    <p className="eventDetails text-sm text-gray-700 mb-1">Kala Kunj Auditorium:...</p>
-                    <p className="eventDetails text-sm text-gray-700 mb-1">Stand up Comedy</p>
-                    <p className="eventDetails text-sm font-semibold">₹ 999 onwards</p>
-                </div>
-            </div>
+          </div>
+        </div>
 
+        {/* <!-- Languages Dropdown --> */}
+        <div className="bg-white shadow-md rounded-md mb-4">
+          <div className="flex justify-between items-center p-4 cursor-pointer">
+          <div className="flex w-2/3 items-center gap-2">
+              <span>
+                <RiArrowDropDownLine />
+              </span>
+              <span>Date</span>
+            </div>
+            <span className="text-sm text-blue-500">Clear</span>
+          </div>
+          <div id="languageDropdown" className=" p-4 border-t">
+            <div className="flex flex-wrap gap-2">
+              <button className="bg-gray-200 text-red-500 px-2 py-1 rounded-md">
+                Hindi
+              </button>
+              <button className="bg-gray-200 text-red-500 px-2 py-1 rounded-md">
+                English
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* <!-- Categories Dropdown --> */}
+        <div className="bg-white shadow-md rounded-md mb-4">
+          <div className="flex justify-between items-center p-4 cursor-pointer">
+          <div className="flex w-2/3 items-center gap-2">
+              <span>
+                <RiArrowDropDownLine />
+              </span>
+              <span>Date</span>
+            </div>
+            <span className="text-sm text-blue-500">Clear</span>
+          </div>
+          <div id="categoriesDropdown" className=" p-4 border-t">
+            <div className="flex flex-wrap gap-2">
+              <button className="bg-gray-200 text-red-500 px-2 py-1 rounded-md">
+                Comedy Shows
+              </button>
+              <button className="bg-gray-200 text-red-500 px-2 py-1 rounded-md">
+                Music Shows
+              </button>
+              <button className="bg-gray-200 text-red-500 px-2 py-1 rounded-md">
+                Poetry
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
