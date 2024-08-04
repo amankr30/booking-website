@@ -47,25 +47,14 @@ const Navbar = () => {
             </svg>
           </div>
 
+
           <button className="bg-red-500 cursor-pointer text-white px-4 py-1 rounded-lg">
+
+          
+          <button className=" signinBtn bg-red-500 cursor-pointer text-white px-3 py-1 rounded-lg">
+
             Sign In
           </button>
-          {/* <button className="md:hidden">
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-            </svg>
-          </button> */}
         </div>
       </nav>
     </div>

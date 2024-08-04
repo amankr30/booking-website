@@ -6,7 +6,7 @@ function Body() {
   return (
     <div className="container w-full px-20 flex justify-between ">
       <div className="filters w-[30%] flex flex-col justify-start mr-5">
-        <div className="heading flex font-semibold lg:text-3xl mb-5">
+        <div className="heading font-semibold lg:text-3xl md:text-2xl mb-5 text-left">
           <h1>Filters</h1>
         </div>
         <div className="options flex flex-col gap-y-3">
