@@ -11,13 +11,6 @@ import {cn} from '../../lib/utils'
 
 import {
   Select,
-<<<<<<< HEAD
-  // SelectContent,
-  // SelectItem,
-  // SelectTrigger,
-  // SelectValue,
-=======
->>>>>>> e42d9975bcfed5619148b3a55a00e4195d693cc6
 } from "../../components/ui/select"
 
 export const DatePicker: React.FC = () => {
