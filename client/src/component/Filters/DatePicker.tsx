@@ -11,10 +11,10 @@ import {cn} from '../../lib/utils'
 
 import {
   Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
+  // SelectContent,
+  // SelectItem,
+  // SelectTrigger,
+  // SelectValue,
 } from "../../components/ui/select"
 
 export const DatePicker: React.FC = () => {
@@ -43,7 +43,7 @@ export const DatePicker: React.FC = () => {
             setDate(addDays(new Date(), parseInt(value)))
           }
         >
-          <SelectTrigger>
+          {/* <SelectTrigger>
             <SelectValue placeholder="Select" />
           </SelectTrigger>
           <SelectContent position="popper">
@@ -51,9 +51,9 @@ export const DatePicker: React.FC = () => {
             <SelectItem value="1">Tomorrow</SelectItem>
             <SelectItem value="3">In 3 days</SelectItem>
             <SelectItem value="7">In a week</SelectItem>
-          </SelectContent>
+          </SelectContent> */}
         </Select>
-        <div className="rounded-md border z bg-slate-500 text-white">
+        <div className="rounded-md border text-black bg-opacity-0">
           <Calendar mode="single" selected={date} onSelect={setDate} />
         </div>
       </PopoverContent>
