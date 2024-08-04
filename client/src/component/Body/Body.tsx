@@ -1,4 +1,3 @@
-
 import FilterCapsule from "../Events/FilterCapsule";
 import { DatePicker } from "../Filters/DatePicker";
 import Card from "./Card";
@@ -17,12 +16,16 @@ function Body() {
         </div>
       </div>
       <div className="events w-full flex flex-col text-left justify-start flex-wrap gap-5">
-        <div className="heading font-semibold lg:text-3xl md:text-2xl">Events in Kolkata</div>
+        <div className="heading font-semibold lg:text-3xl md:text-2xl">
+          Events in Kolkata
+        </div>
         <div className="capsule flex items-start">
           <FilterCapsule />
         </div>
-        <div><Card /></div> 
+        <div>
+          <Card />
         </div>
+      </div>
     </div>
   );
 }

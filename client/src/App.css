@@ -27,6 +27,10 @@
   }
 }
 
+body {
+  font-family: Roboto, sans-serif;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
@@ -43,7 +47,6 @@
 
 /* Media query */
 
-
 @media only screen and (min-width: 1042px) and (max-width: 1285px) {
   .eventName {
     font-size: 12px;
@@ -58,11 +61,10 @@
   }
   .eventDetails {
     font-size: 8px;
-  } 
+  }
   .capsuleFilter button {
     font-size: 12px;
   }
-  
 }
 
 @media only screen and (max-width: 1042px) {
@@ -70,20 +72,17 @@
     margin: 0 2px;
     font-size: 10px;
   }
-  .cardBody{
+  .cardBody {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 5px; 
+    gap: 5px;
   }
-  
 }
 
 @media only screen and (max-width: 950px) {
-  .cardBody{
+  .cardBody {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px; 
+    gap: 8px;
   }
 }
-
-
