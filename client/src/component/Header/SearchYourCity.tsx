@@ -50,7 +50,7 @@ const SearchYourCity = () => {
                 alt="Delhi-NCR"
                 className="w-16 h-16 mb-2"
               />
-              <span>Delhi-NCR</span>
+              <span>Delhi</span>
             </div>
 
             <div className="flex flex-col items-center">
