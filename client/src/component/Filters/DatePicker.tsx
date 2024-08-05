@@ -1,24 +1,24 @@
-import React from 'react'
+import React from "react";
 
-import { CalendarIcon } from "@radix-ui/react-icons"
-import { format ,addDays} from "date-fns"
- 
-
-import { Popover,PopoverContent,PopoverTrigger, } from '@radix-ui/react-popover'
-import { Calendar } from '../../components/ui/calendar'
-import { Button } from '../../components/ui/button'
-import {cn} from '../../lib/utils'
+import { CalendarIcon } from "@radix-ui/react-icons";
+import { format, addDays } from "date-fns";
 
 import {
-  Select,
-} from "../../components/ui/select"
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@radix-ui/react-popover";
+import { Calendar } from "../../components/ui/calendar";
+import { Button } from "../../components/ui/button";
+import { cn } from "../../lib/utils";
+
+import { Select } from "../../components/ui/select";
 
 export const DatePicker: React.FC = () => {
+  const [date, setDate] = React.useState<Date>();
 
-  const [date, setDate] = React.useState<Date>()
- 
-    return (
-      <Popover>
+  return (
+    <Popover>
       <PopoverTrigger asChild>
         <Button
           variant={"outline"}
@@ -31,19 +31,16 @@ export const DatePicker: React.FC = () => {
           {date ? format(date, "PPP") : <span>Pick a date</span>}
         </Button>
       </PopoverTrigger>
-      <PopoverContent
-        className="flex w-auto flex-col space-y-2 p-2"
-      >
+      <PopoverContent className="flex w-auto flex-col space-y-2 p-2">
         <Select
           onValueChange={(value) =>
             setDate(addDays(new Date(), parseInt(value)))
           }
-        >
-        </Select>
+        ></Select>
         <div className="rounded-md border text-black">
           <Calendar mode="single" selected={date} onSelect={setDate} />
         </div>
       </PopoverContent>
     </Popover>
-    )
-}
+  );
+};
