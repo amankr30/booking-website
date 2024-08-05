@@ -1,5 +1,5 @@
-import DialogContent from "@material-ui/core/DialogContent";
-import Dialog from "@material-ui/core/Dialog";
+import DialogContent from "@mui/material/DialogActions";
+import Dialog from "@mui/material/Dialog";
 import SearchYourCity from "./SearchYourCity";
 
 interface OpenSearchCityProps {
@@ -12,13 +12,11 @@ const OpenSearchCity: React.FC<OpenSearchCityProps> = ({
   handleClose,
 }) => {
   return (
-    <div>
+    <div className="w-full">
       <Dialog
         open={open}
         onClose={handleClose}
-        maxWidth="lg"
-        fullWidth
-        classes={{ paper: "bg-opacity-75 backdrop-filter backdrop-blur-lg" }}
+        className="bg-opacity-75 backdrop-filter backdrop-contrast-50"
       >
         <DialogContent>
           <SearchYourCity />
