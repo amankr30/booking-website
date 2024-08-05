@@ -49,7 +49,7 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
-      <OpenSearchCity open={open} handleClose={handleClose} />
+      <div><OpenSearchCity open={open} handleClose={handleClose} /></div>
     </div>
   );
 };
