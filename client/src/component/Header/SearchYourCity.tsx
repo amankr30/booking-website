@@ -6,24 +6,9 @@ const SearchYourCity = () => {
         {/* <!-- Search Bar and Detect My Location --> */}
         <div className="flex flex-col items-center justify-start bg-white p-4 rounded-lg shadow-md">
           <div className="flex items-center justify-start flex-grow w-full mb-4 ">
-            <svg
-              className="w-6 h-6 text-gray-500 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M21 21l-6-6m2-5a7 7 0 1 0-14 0 7 7 0 0 0 14 0z"
-              ></path>
-            </svg>
-            {/* <input type="text" placeholder="Search for your city" className="w-full p-2 border border-gray-300 rounded-lg outline-none" /> */}
-            <Input />
+            <Input placeholder="Search Your City..." />
           </div>
-          <div>
+          {/* <div>
             <button className="flex items-center text-red-500">
               <svg
                 className="w-6 h-6 mr-2"
@@ -41,7 +26,7 @@ const SearchYourCity = () => {
               </svg>
               Detect my location
             </button>
-          </div>
+          </div> */}
         </div>
 
         {/* <!-- Popular Cities --> */}
@@ -103,11 +88,6 @@ const SearchYourCity = () => {
           </div>
         </div>
       </div>
-      <script>
-        // Add your JavaScript code here to make the 'Detect my location' button
-        dynamic later // Example: Add an event listener and a function to handle
-        location detection
-      </script>
     </div>
   );
 };

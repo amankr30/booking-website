@@ -1,6 +1,6 @@
 import FilterCapsule from "../Events/FilterCapsule";
 import Dropdown from "../Filters/Dropdown";
-import Card from './Card'
+import Card from "../Events/Card";
 
 function Body() {
   return (
@@ -13,16 +13,22 @@ function Body() {
           {/* <div className="pick-date w-full">
             <DatePicker />
           </div> */}
-          <div><Dropdown /></div>
+          <div>
+            <Dropdown />
+          </div>
         </div>
       </div>
       <div className="events w-full flex flex-col text-left justify-start flex-wrap gap-5">
-        <div className="heading font-semibold lg:text-3xl md:text-2xl">Events in Kolkata</div>
+        <div className="heading font-semibold lg:text-3xl md:text-2xl">
+          Events in Kolkata
+        </div>
         <div className="capsule flex items-start">
-          {<FilterCapsule />}
+          <FilterCapsule />
         </div>
-        <div><Card /></div> 
+        <div>
+          <Card />
         </div>
+      </div>
     </div>
   );
 }
