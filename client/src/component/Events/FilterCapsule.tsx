@@ -19,7 +19,6 @@ const FilterCapsule = () => {
   return (
     <div className="flex justify-center items-center">
       <div className="capsuleFilter flex lg:space-x-3 text-sm">
-        components
         {categories.map((category) => (
           <button
             key={category._id}

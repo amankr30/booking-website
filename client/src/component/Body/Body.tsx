@@ -1,6 +1,9 @@
+// import { useState } from "react";
 import FilterCapsule from "../Events/FilterCapsule";
-import Dropdown from "../Filters/Dropdown";
 import Card from "./Card";
+import DateDropdown from "../Filters/DateDropdown";
+import ShowDropdown from "../Filters/ShowDropdown";
+import LanguageDropdown from "../Filters/LanguageDropdown";
 
 function Body() {
   return (
@@ -9,9 +12,12 @@ function Body() {
         <div className="heading font-semibold lg:text-3xl md:text-2xl mb-5 text-left">
           <h1>Filters</h1>
         </div>
-        <div className="options flex flex-col gap-y-3">
-          {/* <DatePicker /> */}
-          <Dropdown />
+        <div className="options flex flex-col gap-y-1">
+          <div>
+            <DateDropdown />
+            <LanguageDropdown />
+            <ShowDropdown />
+          </div>
         </div>
       </div>
       <div className="events w-[60%] flex flex-col text-left justify-start flex-wrap gap-5">
