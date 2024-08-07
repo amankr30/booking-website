@@ -1,24 +1,21 @@
-import './App.css'
-import Body from './component/Body/Body'
-import Navbar from './component/Header/Navbar'
-
-
-
+import "./App.css";
+import Body from "./component/Body/Body";
+import Navbar from "./component/Header/Navbar";
+import { Outlet } from "react-router-dom";
 
 function App() {
-
   return (
     <>
-      <div>
-        <div className='mb-5'><Navbar /></div>
-        {/* <div><SearchYourCity /></div>
-        <div ><DatePicker /></div> */}
-       <Body />
-
-        
+      <div className="mb-5 w-full">
+        <Navbar />
       </div>
+      <main>
+        {" "}
+        <Outlet />
+      </main>
+      <Body />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
