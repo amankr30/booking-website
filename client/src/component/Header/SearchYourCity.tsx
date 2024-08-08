@@ -71,7 +71,7 @@ const SearchYourCity = () => {
 									alt="Mumbai"
 									className="w-16 h-16 mb-2"
 								/>
-								<span>Mumbai</span>
+								<span>{city.name}</span>
 							</div>
 						))}
 					</div>
