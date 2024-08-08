@@ -1,7 +1,7 @@
 import "./App.css";
-import Body from "./component/Body/Body";
 import Navbar from "./component/Header/Navbar";
 import { Outlet } from "react-router-dom";
+import ShowPage from "./component/ShowDetails/Showpage";
 
 function App() {
   return (
@@ -13,7 +13,8 @@ function App() {
         {" "}
         <Outlet />
       </main>
-      <Body />
+      {/* <Body /> */}
+      <ShowPage />
     </>
   );
 }
