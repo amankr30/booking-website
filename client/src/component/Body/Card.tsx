@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Card = () => {
   return (
     <div className=" p-4">
@@ -5,7 +7,8 @@ const Card = () => {
         {/* <!-- Event Cards Grid --> */}
         <div className="cardBody grid lg:grid-cols-4 lg:gap-5 items-center">
           {/* <!-- Card 1 --> */}
-          <div className="cards bg-white rounded-lg shadow-md overflow-hidden h-[100%]">
+          <Link to={"/showpage"}>
+          <div className="cards bg-white rounded-lg shadow-md overflow-hidden h-[100%] cursor-pointer">
             <div className="h-[100]">
               <img
                 src="src\assets\card1.jpg"
@@ -28,8 +31,10 @@ const Card = () => {
               </p>
             </div>
           </div>
+          </Link>
           {/* <!-- Card 1 --> */}
-          <div className="cards bg-white rounded-lg shadow-md overflow-hidden h-[100%]">
+          <Link to={"/showpage"}>
+          <div className="cards bg-white rounded-lg shadow-md overflow-hidden h-[100%] cursor-pointer">
             <div className="h-[100]">
               <img
                 src="src\assets\card1.jpg"
@@ -52,8 +57,10 @@ const Card = () => {
               </p>
             </div>
           </div>
+          </Link>
           {/* <!-- Card 1 --> */}
-          <div className="cards bg-white rounded-lg shadow-md overflow-hidden h-[100%]">
+          <Link to={"/showpage"}>
+          <div className="cards bg-white rounded-lg shadow-md overflow-hidden h-[100%] cursor-pointer">
             <div className="h-[100]">
               <img
                 src="src\assets\card1.jpg"
@@ -76,8 +83,10 @@ const Card = () => {
               </p>
             </div>
           </div>
+          </Link>
           {/* <!-- Card 1 --> */}
-          <div className="cards bg-white rounded-lg shadow-md overflow-hidden h-[100%]">
+          <Link to={"/showpage"}>
+          <div className="cards bg-white rounded-lg shadow-md overflow-hidden h-[100%] cursor-pointer">
             <div className="h-[100]">
               <img
                 src="src\assets\card1.jpg"
@@ -100,8 +109,10 @@ const Card = () => {
               </p>
             </div>
           </div>
+          </Link>
           {/* <!-- Card 1 --> */}
-          <div className="cards bg-white rounded-lg shadow-md overflow-hidden h-[100%]">
+          <Link to={"/showpage"}>
+          <div className="cards bg-white rounded-lg shadow-md overflow-hidden h-[100%] cursor-pointer">
             <div className="h-[100]">
               <img
                 src="src\assets\card1.jpg"
@@ -124,6 +135,10 @@ const Card = () => {
               </p>
             </div>
           </div>
+          </Link>
+          
+         
+         
         </div>
       </div>
     </div>
