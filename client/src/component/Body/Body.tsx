@@ -20,7 +20,7 @@ function Body() {
           </div>
         </div>
       </div>
-      <div className="events w-[60%] flex flex-col text-left justify-start flex-wrap gap-5">
+      <div className="events flex flex-col text-left justify-start flex-wrap gap-5">
         <div className="heading font-semibold lg:text-3xl md:text-2xl">
           Events in Kolkata
         </div>
