@@ -8,14 +8,16 @@ const showSchema = new Schema(
 			url: { type: String, required: true },
 		},
 		city: { type: Schema.Types.ObjectId, ref: 'City' },
-		price: { type: Number, required: true },
 		date: { type: Date, required: true },
 		language: { type: String, required: true },
 		category: { type: Schema.Types.ObjectId, ref: 'Category' },
-		totalSeats: { type: Number, required: true },
-		seatsBooked: { type: Number, required: true, default: 0 },
+		seat: [
+			{ category: String, capacity: Number, price: Number, seatsLeft: Number },
+		],
 	},
 	{ timestamps: true }
 );
+
+showSchema.index({ city: 1, category: 1 });
 
 export const Show = mongoose.model('Show', showSchema);
