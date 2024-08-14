@@ -1,5 +1,30 @@
+import { useEffect, useState } from "react";
 import { Input } from "../../components/ui/input";
 const SearchYourCity = () => {
+  const [cities, setCities] = useState<
+    {
+      _id: string;
+      name: string;
+      selectedImage: { url: string };
+      normalImage: { url: string };
+    }[]
+  >([]);
+
+  const [selectedCity, setSelectedCity] = useState<string>(
+    "66b4d1163c9cc135a1e9c9ca"
+  );
+
+  useEffect(() => {
+    const backendUri: string = import.meta.env.VITE_BACKEND_URI as string;
+
+    fetch(`${backendUri}/api/v1/city`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setCities(data.data);
+      });
+  });
   return (
     <div className="bg-gray-100 p-4">
       <div className="max-w-7xl mx-auto">
@@ -8,25 +33,6 @@ const SearchYourCity = () => {
           <div className="flex items-center justify-start flex-grow w-full mb-4 ">
             <Input placeholder="Search Your City..." />
           </div>
-          {/* <div>
-            <button className="flex items-center text-red-500">
-              <svg
-                className="w-6 h-6 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 12h14M12 5l7 7-7 7"
-                ></path>
-              </svg>
-              Detect my location
-            </button>
-          </div> */}
         </div>
 
         {/* <!-- Popular Cities --> */}
@@ -35,56 +41,20 @@ const SearchYourCity = () => {
             Popular Cities
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            <div className="flex flex-col items-center">
-              <img
-                src="src\assets\mumbai-selected.png"
-                alt="Mumbai"
-                className="w-16 h-16 mb-2"
-              />
-              <span>Mumbai</span>
-            </div>
-
-            <div className="flex flex-col items-center">
-              <img
-                src="src\assets\ncr-selected.png"
-                alt="Delhi-NCR"
-                className="w-16 h-16 mb-2"
-              />
-              <span>Delhi</span>
-            </div>
-
-            <div className="flex flex-col items-center">
-              <img
-                src="src\assets\pune-selected.png"
-                alt="Pune"
-                className="w-16 h-16 mb-2"
-              />
-              <span>Pune</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <img
-                src="src\assets\bang-selected.png"
-                alt="Bengaluru"
-                className="w-16 h-16 mb-2"
-              />
-              <span>Bengaluru</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <img
-                src="src\assets\kolk-selected.png"
-                alt="Kolkata"
-                className="w-16 h-16 mb-2"
-              />
-              <span>Kolkata</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <img
-                src="src\assets\hyd-selected.png"
-                alt="Hyderabad"
-                className="w-16 h-16 mb-2"
-              />
-              <span>Hyderabad</span>
-            </div>
+            {cities.map((city) => (
+              <div className="flex flex-col items-center cursor-pointer" key={city._id}>
+                <img
+                  src={
+                    selectedCity === city._id
+                      ? city.selectedImage.url
+                      : city.normalImage.url
+                  }
+                  alt="Mumbai"
+                  className="w-16 h-16 mb-2"
+                />
+                <span>{city.name}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
