@@ -1,27 +1,34 @@
-import React, { useId } from "react"
-const Input = React.forwardRef(function Input ({
-  label,
-  type='text',
-  className='',
-  ...props
-},ref){
-  const id=useId()
+import React, { useId } from "react";
+
+// Define the prop types for the Input component
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  label?: string;
+  type?: string;
+  className?: string;
+}
+
+// Forward ref and define the component
+const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input(
+  { label, type = 'text', className = '', ...props },
+  ref
+) {
+  const id = useId();
   return (
     <div className="w-full">
-      {label && <label className="inline-block mb-1 pl-1"
-      htmlFor={id}>
-        {label}
-      </label>
-      }
-      <Input type={type}
-      className={`px-3 py-2 rounded-lg bg-white text-black outline-none focus:bg-gray-50 duration-200 border border-gray-200 w-full ${className}`}
-      ref={ref}
-      {...props}
-      id={id}
-      >
-      </Input>
+      {label && (
+        <label className="inline-block mb-1 pl-1" htmlFor={id}>
+          {label}
+        </label>
+      )}
+      <input
+        type={type}
+        className={`px-3 py-2 rounded-lg bg-white text-black outline-none focus:bg-gray-50 duration-200 border border-gray-200 w-full ${className}`}
+        ref={ref}
+        {...props}
+        id={id}
+      />
     </div>
-  )
-})
+  );
+});
 
-export default Input
+export default Input;

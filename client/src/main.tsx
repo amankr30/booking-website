@@ -7,31 +7,36 @@ import Showpage from "./component/ShowDetails/Showpage.tsx";
 import Login from "./component/Auth/Login.tsx";
 import Body from "./component/Body/Body.tsx";
 import Error from "./component/Error/Error.tsx";
+import Signup from "./component/Auth/Signup.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children:[
+    children: [
       {
         path: "/",
-        element: <Body />
+        element: <Body />,
       },
       {
         path: "/showpage",
-        element: <Showpage />
+        element: <Showpage />,
       },
       {
         path: "/login",
-        element: <Login />
-      }
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
+      },
     ],
     errorElement: <Error />,
-  }
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
