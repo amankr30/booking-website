@@ -11,7 +11,7 @@ type Inputs = {
 }
 const Login = () => {
   
-  const {register, handleSubmit} = useForm()
+  const {register} = useForm()
   return (
     <div
     className='flex items-center justify-center w-full'
@@ -32,8 +32,8 @@ const Login = () => {
                         Sign Up
                     </Link>
         </p>
-        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-        <form onSubmit={handleSubmit(login)} className='mt-8'>
+        {/* {error && <p className="text-red-600 mt-8 text-center">{error}</p>} */}
+        <form className='mt-8'>
             <div className='space-y-5'>
                 <Input
                 label="Email: "
