@@ -18,12 +18,10 @@ const addShow = catchAsync(async (req, res) => {
 		throw new ApiError(400, 'Cover Image is required');
 	}
 
-	// Validate name
 	if (typeof name !== 'string' || name.trim() === '') {
 		throw new ApiError(400, 'Name must be a non-empty string');
 	}
 
-	// Validate venue
 	if (typeof venue !== 'string' || venue.trim() === '') {
 		throw new ApiError(400, 'Venue must be a non-empty string');
 	}
@@ -74,4 +72,11 @@ const addShow = catchAsync(async (req, res) => {
 	return res.json(new ApiResponse(200, newShow, 'Show created'));
 });
 
-export { addShow };
+const getShows = catchAsync(async (req, res) => {
+	const shows = await Show.find({}).populate('category');
+	console.log(shows);
+
+	return res.json(new ApiResponse(200, shows));
+});
+
+export { addShow, getShows };
