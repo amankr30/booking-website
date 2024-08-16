@@ -8,6 +8,8 @@ import Login from "./component/Auth/Login.tsx";
 import Body from "./component/Body/Body.tsx";
 import Error from "./component/Error/Error.tsx";
 import Signup from "./component/Auth/Signup.tsx";
+import Admin from "./component/admin/Admin.tsx";
+import Showpages from "./component/ShowDetails/Showpages.tsx";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/showpage",
-        element: <Showpage />,
+        element: <Showpages />,
       },
       {
         path: "/login",
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup />,
+      },
+      {
+        path: "/admin",
+        element: <Admin />,
       },
     ],
     errorElement: <Error />,

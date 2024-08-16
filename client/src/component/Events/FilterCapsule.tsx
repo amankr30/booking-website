@@ -22,7 +22,7 @@ const FilterCapsule = () => {
         {categories.map((category) => (
           <button
             key={category._id}
-            className="px-2 py-1 rounded-full border border-gray-300 text-red-500 hover:bg-red-100 transition duration-300"
+            className="px-2 py-1 rounded-full border border-gray-300 text-purple-700 hover:bg-purple-200 hover:text-black transition duration-300"
           >
             {category.name}
           </button>
