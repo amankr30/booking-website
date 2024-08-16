@@ -21,7 +21,7 @@ const Navbar = () => {
           {/* <!-- Logo --> */}
           <div className="flex items-center mx-5">
             <span className="font-semibold text-xl">
-              book<span className="text-red-500">my</span>show
+              book<span className="text-purple-700">my</span>show
             </span>
           </div>
           {/* <!-- Search Bar --> */}
@@ -44,7 +44,7 @@ const Navbar = () => {
               <RiArrowDropDownLine />
             </span>
           </div>
-          <button className=" signinBtn bg-red-500 cursor-pointer text-white px-3 py-1 rounded-lg">
+          <button className=" signinBtn bg-purple-700 cursor-pointer text-white px-3 py-1 rounded-lg">
             Sign In
           </button>
         </div>
