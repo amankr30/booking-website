@@ -30,6 +30,7 @@ const showSchema = new Schema(
 			ref: 'Category',
 			required: true,
 		},
+		performer: String,
 		venue: { type: String, required: true },
 		bookings: [{ type: Schema.Types.ObjectId, ref: 'Booking' }],
 		seatCategories: [seatCategoriesSchema],
