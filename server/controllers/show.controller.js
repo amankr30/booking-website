@@ -7,10 +7,19 @@ import { City } from '../models/City.model.js';
 import { Language } from '../models/Language.model.js';
 import { Show } from '../models/Show.model.js';
 import { uploadOnCloudinary } from '../utils/cloudinary.js';
+import { v2 as cloudinary } from 'cloudinary';
 
 const addShow = catchAsync(async (req, res) => {
-	const { name, cityId, date, languageId, categoryId, seatCategories, venue } =
-		req.body;
+	const {
+		name,
+		cityId,
+		date,
+		languageId,
+		categoryId,
+		seatCategories,
+		venue,
+		performer,
+	} = req.body;
 
 	const coverImage = req.file;
 
@@ -69,14 +78,30 @@ const addShow = catchAsync(async (req, res) => {
 	if (!newShow) {
 		throw new ApiError(500, 'Something went wrong while saving show');
 	}
-	return res.json(new ApiResponse(200, newShow, 'Show created'));
+	return res.status(201).json(new ApiResponse(201, newShow, 'Show created'));
+});
+
+const deleteShow = catchAsync(async (req, res) => {
+	const { showId } = req.params;
+	const show = await Show.findById(showId);
+	if (!show) {
+		throw new ApiError(401, 'Invalid show id');
+	}
+
+	await cloudinary.uploader.destroy(show.coverImage.public_id);
+
+	await Show.findByIdAndDelete(showId);
+
+	return res
+		.status(200)
+		.json(new ApiResponse(200, {}, 'Show deleted successfully'));
 });
 
 const getShows = catchAsync(async (req, res) => {
 	const shows = await Show.find({}).populate('category');
 	console.log(shows);
 
-	return res.json(new ApiResponse(200, shows));
+	return res.status(200).json(new ApiResponse(200, shows));
 });
 
-export { addShow, getShows };
+export { addShow, deleteShow, getShows };
