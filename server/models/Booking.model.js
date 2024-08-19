@@ -8,6 +8,8 @@ const bookingSchema = new Schema(
 			category: { type: String, required: true },
 			count: { type: Number, required: true },
 		},
+		price: {type: Number, required: true}
+		
 	},
 	{ timestamps: true }
 );

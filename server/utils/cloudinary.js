@@ -34,7 +34,7 @@ const uploadShowImage = async (localFilePath) => {
 		folder: 'booking-website/show-image',
 		resource_type: 'image',
 		transformation: [{ width: 400, height: 660, crop: 'limit' }],
-		allowed_formats: ['jpg', 'png', 'jpeg', 'avif'],
+		allowed_formats: ['jpg', 'png', 'jpeg', 'avif', 'svg', 'webp'],
 	});
 };
 
@@ -43,7 +43,7 @@ const uploadProfileImage = async (localFilePath) => {
 		folder: 'booking-website/profile-image',
 		resource_type: 'image',
 		transformation: [{ width: 1080, height: 1080, crop: 'limit' }],
-		allowed_formats: ['jpg', 'png', 'jpeg', 'avif'],
+		allowed_formats: ['jpg', 'png', 'jpeg', 'avif', 'svg', 'webp'],
 	});
 };
 
@@ -52,7 +52,7 @@ const uploadCityImage = async (localFilePath) => {
 		folder: 'booking-website/city-image',
 		resource_type: 'image',
 		transformation: [{ width: 80, height: 80, crop: 'limit' }],
-		allowed_formats: ['jpg', 'png', 'jpeg', 'avif'],
+		allowed_formats: ['jpg', 'png', 'jpeg', 'avif', 'svg', 'webp'],
 	});
 };
 
