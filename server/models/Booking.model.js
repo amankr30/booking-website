@@ -2,11 +2,14 @@ import mongoose, { Schema } from 'mongoose';
 
 const bookingSchema = new Schema(
 	{
-		language: { type: String, required: true },
-		category: { type: Schema.Types.ObjectId, ref: 'Category' },
-		seat: [
-			{ category: String, capacity: Number, price: Number, seatsLeft: Number },
-		],
+		show: { type: Schema.Types.ObjectId, ref: 'Show' },
+		user: { type: Schema.Types.ObjectId, ref: 'User' },
+		seatsBooked: {
+			category: { type: String, required: true },
+			count: { type: Number, required: true },
+		},
+		price: {type: Number, required: true}
+		
 	},
 	{ timestamps: true }
 );
