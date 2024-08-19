@@ -2,15 +2,23 @@ import React, { useState } from "react";
 
 interface AddActorProps {
     onClose: () => void;
-    onSubmit: (article: { date: string; time: string; category: string; actor: string }) => void;
+    onSubmit: (article: {NameOfShow:string; date: string; time: string; category: string; actor: string;
+        coverImage: string;
+        city: string;
+        language: string;
+     }) => void;
 }
 
 const AddActor: React.FC<AddActorProps> = ({ onClose, onSubmit }) => {
     const [article, setArticle] = useState({
+        NameOfShow: "",
         date: "",
         time: "",
         category: "",
-        actor: ""
+        actor: "",
+        coverImage: "",
+        city: "",
+        language: "",
     });
 
     const handleSubmit = () => {
@@ -23,6 +31,14 @@ const AddActor: React.FC<AddActorProps> = ({ onClose, onSubmit }) => {
             <div className="bg-white p-8 rounded-lg shadow-lg w-1/3">
                 <h2 className="text-xl font-semibold mb-4">Add New Article</h2>
                 <div className="space-y-4">
+                    <div className="cursor-pointer">
+                        <input
+                            type="text"
+                            className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                            value={article.NameOfShow}
+                            onChange={(e) => setArticle({ ...article, NameOfShow: e.target.value })}
+                        />
+                    </div>
                     <div className="cursor-pointer">
                         <input
                             type="date"
@@ -58,6 +74,33 @@ const AddActor: React.FC<AddActorProps> = ({ onClose, onSubmit }) => {
                             className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
                             value={article.actor}
                             onChange={(e) => setArticle({ ...article, actor: e.target.value })}
+                        />
+                    </div>
+                    <div className="cursor-pointer">
+                        <input
+                            type="text"
+                            placeholder="coverImage"
+                            className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                            value={article.coverImage}
+                            onChange={(e) => setArticle({ ...article, coverImage: e.target.value })}
+                        />
+                    </div>
+                    <div className="cursor-pointer">
+                        <input
+                            type="text"
+                            placeholder="city"
+                            className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                            value={article.city}
+                            onChange={(e) => setArticle({ ...article, city: e.target.value })}
+                        />
+                    </div>
+                    <div className="cursor-pointer">
+                        <input
+                            type="text"
+                            placeholder="language"
+                            className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                            value={article.language}
+                            onChange={(e) => setArticle({ ...article, language: e.target.value })}
                         />
                     </div>
                 </div>

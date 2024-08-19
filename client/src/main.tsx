@@ -3,13 +3,13 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Showpage from "./component/ShowDetails/Showpage.tsx";
 import Login from "./component/Auth/Login.tsx";
 import Body from "./component/Body/Body.tsx";
 import Error from "./component/Error/Error.tsx";
 import Signup from "./component/Auth/Signup.tsx";
 import Admin from "./component/admin/Admin.tsx";
 import Showpages from "./component/ShowDetails/Showpages.tsx";
+import AddShow from "./component/admin/AddShow.tsx";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/admin",
         element: <Admin />,
+      },
+      {
+        path: "/addshow",
+        element: <AddShow />,
       },
     ],
     errorElement: <Error />,
