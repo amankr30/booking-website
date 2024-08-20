@@ -10,98 +10,87 @@ import { uploadOnCloudinary } from '../utils/cloudinary.js';
 import { v2 as cloudinary } from 'cloudinary';
 
 const addShow = catchAsync(async (req, res) => {
-	const {
-		name,
-		cityId,
-		date,
-		languageId,
-		categoryId,
-		seatCategories,
-		venue,
-		performer,
-	} = req.body;
+  const {
+    name,
+    cityId,
+    date,
+    languageId,
+    categoryId,
+    seatCategories,
+    venue,
+    performer,
+  } = req.body;
 
-	const coverImage = req.file;
+  const coverImage = req.file;
 
-	if (!coverImage) {
-		throw new ApiError(400, 'Cover Image is required');
-	}
+  const formattedDate = new Date(date);
 
-	if (typeof name !== 'string' || name.trim() === '') {
-		throw new ApiError(400, 'Name must be a non-empty string');
-	}
+  if (isNaN(formattedDate.getTime())) {
+    throw new ApiError(400, 'Date not valid');
+  }
 
-	if (typeof venue !== 'string' || venue.trim() === '') {
-		throw new ApiError(400, 'Venue must be a non-empty string');
-	}
+  const [city, category, language] = await Promise.all([
+    City.findById(cityId),
+    Category.findById(categoryId),
+    Language.findById(languageId),
+  ]);
 
-	const formattedDate = new Date(date);
+  if (!city) {
+    throw new ApiError(400, 'City ID is invalid');
+  }
 
-	if (isNaN(formattedDate.getTime())) {
-		throw new ApiError(400, 'Date not valid');
-	}
+  if (!category) {
+    throw new ApiError(400, 'Category ID is invalid');
+  }
 
-	const [city, category, language] = await Promise.all([
-		City.findById(cityId),
-		Category.findById(categoryId),
-		Language.findById(languageId),
-	]);
+  if (!language) {
+    throw new ApiError(400, 'Language ID is invalid');
+  }
 
-	if (!city) {
-		throw new ApiError(400, 'City ID is invalid');
-	}
+  const uploadCategoryImage = await uploadOnCloudinary(coverImage.path, 'show');
 
-	if (!category) {
-		throw new ApiError(400, 'Category ID is invalid');
-	}
+  const newShow = await Show.create({
+    name,
+    venue,
+    performer,
+    city: city._id,
+    category: category._id,
+    language: language._id,
+    date: formattedDate,
+    seatCategories,
+    coverImage: {
+      public_id: uploadCategoryImage.public_id,
+      url: uploadCategoryImage.secure_url,
+    },
+  });
 
-	if (!language) {
-		throw new ApiError(400, 'Language ID is invalid');
-	}
-
-	const uploadCategoryImage = await uploadOnCloudinary(coverImage.path, 'show');
-
-	const newShow = await Show.create({
-		name,
-		venue,
-		city: city._id,
-		category: category._id,
-		language: language._id,
-		date: formattedDate,
-		seatCategories,
-		coverImage: {
-			public_id: uploadCategoryImage.public_id,
-			url: uploadCategoryImage.secure_url,
-		},
-	});
-
-	if (!newShow) {
-		throw new ApiError(500, 'Something went wrong while saving show');
-	}
-	return res.status(201).json(new ApiResponse(201, newShow, 'Show created'));
+  if (!newShow) {
+    throw new ApiError(500, 'Something went wrong while saving show');
+  }
+  return res.status(201).json(new ApiResponse(201, newShow, 'Show created'));
 });
 
 const deleteShow = catchAsync(async (req, res) => {
-	const { showId } = req.params;
-	const show = await Show.findById(showId);
-	if (!show) {
-		throw new ApiError(401, 'Invalid show id');
-	}
+  const { showId } = req.params;
+  const show = await Show.findById(showId);
+  if (!show) {
+    throw new ApiError(401, 'Invalid show id');
+  }
 
-	await cloudinary.uploader.destroy(show.coverImage.public_id);
+  await cloudinary.uploader.destroy(show.coverImage.public_id);
 
-	await Show.findByIdAndDelete(showId);
+  await Show.findByIdAndDelete(showId);
 
-	return res
-		.status(200)
-		.json(new ApiResponse(200, {}, 'Show deleted successfully'));
+  return res
+    .status(200)
+    .json(new ApiResponse(200, {}, 'Show deleted successfully'));
 });
 
 const getShows = catchAsync(async (req, res) => {
-	const shows = await Show.find({}).populate('category');
-	console.log(shows);
+  const shows = await Show.find({}).populate('category');
+  console.log(shows);
 
-	return res.status(200).json(new ApiResponse(200, shows));
+  return res.status(200).json(new ApiResponse(200, shows));
 });
 
 export { addShow, deleteShow, getShows };
