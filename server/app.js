@@ -7,10 +7,10 @@ import cookieParser from 'cookie-parser';
 const app = express();
 
 app.use(
-	cors({
-		origin: process.env.CORS_ORIGIN,
-		credentials: true,
-	})
+  cors({
+    origin: process.env.CORS_ORIGIN,
+    credentials: true,
+  }),
 );
 
 app.use(express.json({ limit: '16kb' }));
@@ -31,7 +31,7 @@ app.use('/api/v1/user', userRouter);
 app.use('/api/v1/show', showRouter);
 
 app.use((req, res, next) => {
-	next(new ApiError(404, 'Not Found'));
+  next(new ApiError(404, 'Not Found'));
 });
 
 app.use(errorHandler);
