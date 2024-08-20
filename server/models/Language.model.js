@@ -1,7 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
 
-const categorySchema = new Schema({
+const languageSchema = new Schema({
   name: { type: String, required: true, trim: true, unique: true },
 });
 
-export const Category = mongoose.model('Category', categorySchema);
+export const Language = mongoose.model('Language', languageSchema);

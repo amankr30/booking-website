@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Input } from "../../components/ui/input";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import OpenSearchCity from "./OpenSearchCity";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -20,9 +21,11 @@ const Navbar = () => {
         <div className="w-2/3 flex items-center">
           {/* <!-- Logo --> */}
           <div className="flex items-center mx-5">
-            <span className="font-semibold text-xl">
-              book<span className="text-red-500">my</span>show
+           <Link to='/'>
+           <span className="font-semibold text-xl">
+              book<span className="text-purple-700">my</span>show
             </span>
+           </Link>
           </div>
           {/* <!-- Search Bar --> */}
           <div className="flex w-2/3 mx-2 ">
@@ -44,7 +47,7 @@ const Navbar = () => {
               <RiArrowDropDownLine />
             </span>
           </div>
-          <button className=" signinBtn bg-red-500 cursor-pointer text-white px-3 py-1 rounded-lg">
+          <button className=" signinBtn bg-purple-700 cursor-pointer text-white px-3 py-1 rounded-lg">
             Sign In
           </button>
         </div>

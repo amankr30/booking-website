@@ -8,7 +8,7 @@ const LanguageDropdown = () => {
 
   const handleOptionClick = (option: string) => {
     if (selectedOptions.includes(option)) {
-      setSelectedOptions(selectedOptions.filter(opt => opt !== option));
+      setSelectedOptions(selectedOptions.filter((opt) => opt !== option));
     } else {
       setSelectedOptions([...selectedOptions, option]);
     }
@@ -30,7 +30,7 @@ const LanguageDropdown = () => {
           <span>Language</span>
         </div>
         <span
-          className="text-sm text-gray-400 cursor-pointer hover:text-red-500"
+          className="text-sm text-gray-400 cursor-pointer hover:text-purple-700"
           onClick={handleClear}
         >
           Clear
@@ -44,8 +44,8 @@ const LanguageDropdown = () => {
                 key={option}
                 className={`px-2 py-1 rounded-md ${
                   selectedOptions.includes(option)
-                    ? "bg-red-500 text-white"
-                    : "bg-gray-100 text-red-500"
+                    ? "bg-purple-700 text-white"
+                    : "bg-gray-100 text-purple-700"
                 }`}
                 onClick={() => handleOptionClick(option)}
               >

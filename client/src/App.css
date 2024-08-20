@@ -108,3 +108,29 @@ body {
   
 }
 
+/* ********************AddShowForm************************* */
+
+.errorMsg {
+  max-width: 350px;
+  color: #f21e08;
+  padding: 2px 0;
+  margin-top: 2px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-control input{
+  outline: none;
+}
+
+.form-control input[type="text"],
+.form-control input[type="password"] {
+  padding: 5px;
+}
+

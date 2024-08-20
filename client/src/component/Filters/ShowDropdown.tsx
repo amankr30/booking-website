@@ -31,7 +31,7 @@ const ShowDropdown = () => {
           <span>Show</span>
         </div>
         <span
-          className="text-sm text-gray-400 cursor-pointer hover:text-red-500"
+          className="text-sm text-gray-400 cursor-pointer hover:text-purple-700"
           onClick={handleClear}
         >
           Clear
@@ -45,8 +45,8 @@ const ShowDropdown = () => {
                 key={option}
                 className={`px-2 py-1 rounded-md ${
                   selectedOptions.includes(option)
-                    ? "bg-red-500 text-white"
-                    : "bg-gray-100 text-red-500"
+                    ? "bg-purple-700 text-white"
+                    : "bg-gray-100 text-purple-700"
                 }`}
                 onClick={() => handleOptionClick(option)}
               >
