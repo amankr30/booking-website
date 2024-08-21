@@ -1,11 +1,8 @@
-import FilterCapsule from "../Events/FilterCapsule";
-import Card from "./Card";
-import DateDropdown from "../Filters/DateDropdown";
-import ShowDropdown from "../Filters/ShowDropdown";
-import LanguageDropdown from "../Filters/LanguageDropdown";
+import FilterCapsule from './FilterCapsule';
+import Cards from './Cards';
+import Sidebar from '../../components/sidebar/Sidebar';
 
-
-function Body() {
+function Home() {
   return (
     <div className="container w-full px-20 flex mt-10">
       <div className="filters w-[40%] flex flex-col justify-start">
@@ -14,9 +11,7 @@ function Body() {
         </div>
         <div className="options flex flex-col gap-y-1">
           <div>
-            <DateDropdown />
-            <LanguageDropdown />
-            <ShowDropdown />
+            <Sidebar />
           </div>
         </div>
       </div>
@@ -28,12 +23,11 @@ function Body() {
           <FilterCapsule />
         </div>
         <div className="event-card">
-          <Card />
-          
+          <Cards />
         </div>
       </div>
     </div>
   );
 }
 
-export default Body;
+export default Home;

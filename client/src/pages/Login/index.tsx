@@ -1,8 +1,7 @@
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-
-import Input from "./Input";
-import Button from "./Button";
+import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
+import Input from '../../components/form/Input';
+import Button from '../../components/form/Button';
 
 const Login = () => {
   const { register } = useForm();
@@ -24,31 +23,29 @@ const Login = () => {
             Sign Up
           </Link>
         </p>
-        
+
         <form className="mt-5">
           <div className="space-y-5">
             <Input
               placeholder="Enter your email"
               type="email"
-              {...register("name", {
+              {...register('name', {
                 required: true,
                 validate: {
                   matchPatern: (value) =>
                     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-                    "Email address must be a valid address",
+                    'Email address must be a valid address',
                 },
               })}
             />
             <Input
               type="password"
               placeholder="Enter your password"
-              {...register("password", {
+              {...register('password', {
                 required: true,
               })}
             />
-            <Button  type="submit">
-              Sign in
-            </Button>
+            <Button type="submit">Sign in</Button>
           </div>
         </form>
       </div>

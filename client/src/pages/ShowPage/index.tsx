@@ -1,5 +1,5 @@
-import React from "react";
-import { GrLocation } from "react-icons/gr";
+import React from 'react';
+import { GrLocation } from 'react-icons/gr';
 
 const Showpages: React.FC = () => {
   return (
@@ -37,7 +37,7 @@ const Showpages: React.FC = () => {
                 <span>
                   <GrLocation className="text-purple-700" />
                 </span>
-                <p >Venue: Kolkata</p>
+                <p>Venue: Kolkata</p>
                 <p className="px-2">|</p>
               </div>
               <div className="price mx-2">₹ 590 onwards</div>
