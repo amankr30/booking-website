@@ -1,4 +1,4 @@
-import React, { useId } from "react";
+import React, { useId } from 'react';
 
 // Define the prop types for the Input component
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -10,7 +10,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 // Forward ref and define the component
 const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input(
   { label, type = 'text', className = '', ...props },
-  ref
+  ref,
 ) {
   const id = useId();
   return (
