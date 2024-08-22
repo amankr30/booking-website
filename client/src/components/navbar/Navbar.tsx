@@ -3,12 +3,14 @@ import { Input } from '../ui/input';
 import { RiArrowDropDownLine } from 'react-icons/ri';
 import OpenSearchCity from './OpenSearchCity';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
+import { logout } from '../../redux/authSlice';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const authState = useSelector((state: RootState) => state.auth);
+  const dispatch = useDispatch();
 
   const handleClick = () => {
     setOpen(true);
@@ -16,6 +18,10 @@ const Navbar = () => {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleLogout = () => {
+    dispatch(logout());
   };
 
   return (
@@ -50,11 +56,12 @@ const Navbar = () => {
               <RiArrowDropDownLine />
             </span>
           </div>
-          {authState.isLoggedIn && (
-            <div>{authState.user && authState.user.name}</div>
-          )}
-          {authState.isLoggedIn ? (
-            <button className="bg-purple-700 cursor-pointer text-white px-3 py-1 rounded-lg">
+          {authState.user && <div>{authState.user && authState.user.name}</div>}
+          {authState.user ? (
+            <button
+              className="bg-purple-700 cursor-pointer text-white px-3 py-1 rounded-lg"
+              onClick={handleLogout}
+            >
               Sign Out
             </button>
           ) : (
