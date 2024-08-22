@@ -10,6 +10,8 @@ import Error from './components/Error.tsx';
 import Admin from './pages/Admin/index.tsx';
 import AddShow from './pages/Admin/AddShow.tsx';
 import Showpage from './pages/ShowPage/index.tsx';
+import { Provider } from 'react-redux';
+import store from './redux/store.ts';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +27,7 @@ const router = createBrowserRouter([
         element: <Showpage />,
       },
       {
-        path: '/login',
+        path: '/signin',
         element: <Login />,
       },
       {
@@ -47,6 +49,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 );

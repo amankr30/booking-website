@@ -3,9 +3,12 @@ import { Input } from '../ui/input';
 import { RiArrowDropDownLine } from 'react-icons/ri';
 import OpenSearchCity from './OpenSearchCity';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/redux/store';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const authState = useSelector((state: RootState) => state.auth);
 
   const handleClick = () => {
     setOpen(true);
@@ -47,9 +50,18 @@ const Navbar = () => {
               <RiArrowDropDownLine />
             </span>
           </div>
-          <button className=" signinBtn bg-purple-700 cursor-pointer text-white px-3 py-1 rounded-lg">
-            Sign In
-          </button>
+          {authState.isLoggedIn && (
+            <div>{authState.user && authState.user.name}</div>
+          )}
+          {authState.isLoggedIn ? (
+            <button className="bg-purple-700 cursor-pointer text-white px-3 py-1 rounded-lg">
+              Sign Out
+            </button>
+          ) : (
+            <button className=" signinBtn bg-purple-700 cursor-pointer text-white px-3 py-1 rounded-lg">
+              Sign In
+            </button>
+          )}
         </div>
       </nav>
       <div>
