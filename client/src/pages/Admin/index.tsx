@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import AddShow from "./AddShow";
-import { Dialog, DialogContent, IconButton } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
+import React, { useState } from 'react';
+import AddShow from './AddShow';
+import { Dialog, DialogContent, IconButton } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 
 interface FormData {
   showName: string;
@@ -35,7 +35,7 @@ const Admin: React.FC = () => {
   const handleAddArticle = (data: FormData) => {
     // Convert file input to URL or handle it as needed
     const coverImageURL =
-      data.coverImage.length > 0 ? URL.createObjectURL(data.coverImage[0]) : "";
+      data.coverImage.length > 0 ? URL.createObjectURL(data.coverImage[0]) : '';
 
     setArticles([
       ...articles,

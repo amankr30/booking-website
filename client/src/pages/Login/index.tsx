@@ -1,13 +1,27 @@
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
+import Input from '../../components/form/Input';
+import Button from '../../components/form/Button';
+import { loginUser } from '../../redux/authSlice';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 
-import Input from "./Input";
-import Button from "./Button";
+interface LoginFormInputs {
+  email: string;
+  password: string;
+}
 
 const Login = () => {
-  const { register } = useForm();
+  const { register, handleSubmit } = useForm<LoginFormInputs>();
+  const { error, loading } = useAppSelector((state) => state.auth);
+  const dispatch = useAppDispatch();
+
+  const handleLogin = async (data: LoginFormInputs) => {
+    dispatch(loginUser(data));
+  };
+
   return (
     <div className="flex items-center justify-center w-full">
+      {`${error ? error : ''}`}
       <div
         className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}
       >
@@ -24,31 +38,35 @@ const Login = () => {
             Sign Up
           </Link>
         </p>
-        
-        <form className="mt-5">
+
+        <form className="mt-5" onSubmit={handleSubmit(handleLogin)}>
           <div className="space-y-5">
             <Input
               placeholder="Enter your email"
               type="email"
-              {...register("name", {
+              {...register('email', {
                 required: true,
                 validate: {
                   matchPatern: (value) =>
                     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-                    "Email address must be a valid address",
+                    'Email address must be a valid address',
                 },
               })}
             />
             <Input
               type="password"
               placeholder="Enter your password"
-              {...register("password", {
+              {...register('password', {
                 required: true,
               })}
             />
-            <Button  type="submit">
-              Sign in
-            </Button>
+            {loading ? (
+              <Button type="submit" disabled={true}>
+                Signing in...
+              </Button>
+            ) : (
+              <Button type="submit">Sign in</Button>
+            )}
           </div>
         </form>
       </div>

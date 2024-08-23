@@ -1,19 +1,18 @@
-import React from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import React from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
 
 interface AddShowProps {
   onSubmit: (data: FormData) => void;
 }
 
 interface FormData {
-  showName: string;
-  Categories: string;
+  name: string;
+  categoryId: string;
   coverImage: FileList;
-  city: string;
-  Actor: string;
-  language: string;
+  cityId: string;
+  performer: string;
+  languageId: string;
   date: string;
-  time: string; // Ensure this field is included
 }
 
 const AddShow: React.FC<AddShowProps> = ({ onSubmit }) => {
@@ -38,11 +37,11 @@ const AddShow: React.FC<AddShowProps> = ({ onSubmit }) => {
             className="border-2 p-2 w-full"
             placeholder="Name of the show"
             type="text"
-            {...register("showName", {
-              required: "Showname is required.",
+            {...register('showName', {
+              required: 'Showname is required.',
               validate: {
                 checkLength: (value) =>
-                  value.length <= 50 || "Name should be at most 50 characters.",
+                  value.length <= 50 || 'Name should be at most 50 characters.',
               },
             })}
           />
@@ -57,8 +56,8 @@ const AddShow: React.FC<AddShowProps> = ({ onSubmit }) => {
             className="border-2 p-2 w-full"
             placeholder="Categories"
             type="text"
-            {...register("Categories", {
-              required: "Category is required.",
+            {...register('Categories', {
+              required: 'Category is required.',
             })}
           />
           {errors.Categories && (
@@ -72,8 +71,8 @@ const AddShow: React.FC<AddShowProps> = ({ onSubmit }) => {
             className="border-2 p-2 w-full"
             id="coverImage"
             type="file"
-            {...register("coverImage", {
-              required: "Cover image is required.",
+            {...register('coverImage', {
+              required: 'Cover image is required.',
             })}
           />
           {errors.coverImage && (
@@ -87,8 +86,8 @@ const AddShow: React.FC<AddShowProps> = ({ onSubmit }) => {
             className="border-2 p-2 w-full"
             placeholder="City"
             type="text"
-            {...register("city", {
-              required: "City name is required.",
+            {...register('city', {
+              required: 'City name is required.',
             })}
           />
           {errors.city && (
@@ -102,8 +101,8 @@ const AddShow: React.FC<AddShowProps> = ({ onSubmit }) => {
             className="border-2 p-2 w-full"
             placeholder="Name of the actor"
             type="text"
-            {...register("Actor", {
-              required: "Actor name is required.",
+            {...register('Actor', {
+              required: 'Actor name is required.',
             })}
           />
           {errors.Actor && (
@@ -117,8 +116,8 @@ const AddShow: React.FC<AddShowProps> = ({ onSubmit }) => {
             className="border-2 p-2 w-full"
             placeholder="Language"
             type="text"
-            {...register("language", {
-              required: "Language is required.",
+            {...register('language', {
+              required: 'Language is required.',
             })}
           />
           {errors.language && (
@@ -132,11 +131,11 @@ const AddShow: React.FC<AddShowProps> = ({ onSubmit }) => {
             className="border-2 p-2 w-full"
             id="date"
             type="date"
-            {...register("date", {
-              required: "Date is required.",
+            {...register('date', {
+              required: 'Date is required.',
               validate: {
                 futureDate: (value) =>
-                  new Date(value) > new Date() || "Date must be in the future.",
+                  new Date(value) > new Date() || 'Date must be in the future.',
               },
             })}
           />
@@ -151,8 +150,8 @@ const AddShow: React.FC<AddShowProps> = ({ onSubmit }) => {
             className="border-2 p-2 w-full"
             id="time"
             type="time"
-            {...register("time", {
-              required: "Time is required.",
+            {...register('time', {
+              required: 'Time is required.',
             })}
           />
           {errors.time && (

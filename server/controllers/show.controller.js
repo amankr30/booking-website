@@ -88,7 +88,6 @@ const deleteShow = catchAsync(async (req, res) => {
 
 const getShows = catchAsync(async (req, res) => {
   const shows = await Show.find({}).populate('category');
-  console.log(shows);
 
   return res.status(200).json(new ApiResponse(200, shows));
 });

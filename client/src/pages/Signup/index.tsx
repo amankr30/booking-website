@@ -1,9 +1,7 @@
-import React from "react";
-
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import Input from "./Input";
-import Button from "./Button";
+import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
+import Input from '../../components/form/Input';
+import Button from '../../components/form/Button';
 
 function Signup() {
   const { register } = useForm();
@@ -32,33 +30,33 @@ function Signup() {
             <Input
               placeholder="Enter your Name"
               type="text"
-              {...register("name", {
+              {...register('name', {
                 required: true,
               })}
             />
             <Input
               placeholder="Enter your email"
               type="email"
-              {...register("email", {
+              {...register('email', {
                 required: true,
                 validate: {
                   matchPatern: (value) =>
                     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-                    "Email address must be a valid address",
+                    'Email address must be a valid address',
                 },
               })}
             />
             <Input
               placeholder="Enter your password"
               type="password"
-              {...register("password", {
+              {...register('password', {
                 required: true,
               })}
             />
             <div>
               <select
                 id="city"
-                {...register("city", { required: true })}
+                {...register('city', { required: true })}
                 className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm outline-none"
               >
                 <option value="" disabled>
